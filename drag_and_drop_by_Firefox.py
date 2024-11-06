@@ -25,7 +25,7 @@ class DragAndDrop(Data, Locators):
         self.action = ActionChains(self.driver)  # Create an ActionChains object for performing actions
 
     # Method to Start Automation
-    def StartAutomation(self):
+    def start_automation(self):
         self.driver.maximize_window()  # Maximize the browser window
         self.driver.get(self.url)  # Navigate to the specified URL
         sleep(5)  # Wait for 5 seconds to allow the page to fully load
@@ -33,7 +33,7 @@ class DragAndDrop(Data, Locators):
     # Method to perform Drag and Drop Operations
     def drag_drop(self):
         try:
-            self.StartAutomation() # Start automation by opening the webpage
+            self.start_automation() # Start automation by opening the webpage
 
             # Locate the iframe by CSS selector
             frame_element = self.driver.find_element(by=By.CSS_SELECTOR, value=self.frame_locator)  
